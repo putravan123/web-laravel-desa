@@ -1,3 +1,8 @@
+![Untitled (2)](https://github.com/user-attachments/assets/1236117f-3543-40ad-89f7-bd1faac3cb99)
+
+# ini untuk gambar dokumen
+![kop](https://github.com/user-attachments/assets/957190c1-9542-427f-9255-a4d772b7ba14)
+
 # 1. Prasyarat 
 ### Pastikan perangkat Anda telah memenuhi prasyarat berikut sebelum menginstal Repository ini:
 
