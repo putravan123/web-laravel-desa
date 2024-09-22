@@ -1,0 +1,185 @@
+<!-- <h6 class="collapse-header">Custom Components:</h6> -->
+
+<!-- table -->
+@extends('tampilan.app')
+
+@section('content')
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+        <!-- Tombol untuk menambah pengguna baru -->
+        <a href="{{ route('data.create') }}" class="btn btn-primary">Buat User Baru</a>
+                <div style="margin-left: 10px">
+            <form action="{{ route('users.index') }}" method="GET">
+                <select name="p" onchange="this.form.submit()">
+                    <option value="5" {{ request('p') == 5 ? 'selected' : '' }}>5</option>
+                    <option value="10" {{ request('p') == 10 ? 'selected' : '' }}>10</option>
+                    <option value="50" {{ request('p') == 50 ? 'selected' : '' }}>50</option>
+                    <option value="100" {{ request('p') == 100 ? 'selected' : '' }}>100</option>
+                </select>
+            </form>
+        </div>
+        <!-- Form Pencarian -->
+        <form action="{{ route('data.index') }}" method="GET" class="d-flex mb-0 ml-auto">
+            <div class="input-group">
+                <input type="text" name="search" placeholder="Search by name or email" value="{{ request('search') }}" class="form-control">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="card-body">
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+        
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>No</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php $no = 1; @endphp
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>
+                                <a href="{{ route('data.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('data.destroy', $user->id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Menampilkan Pagination -->
+        <div class="d-flex justify-content-center">
+            {{ $users->links('pagination::bootstrap-4') }}
+        </div>
+    </div>
+</div>
+@endsection
+
+
+
+<!-- create table -->
+
+@extends('tampilan.app') 
+
+@section('content')
+<div class="container mt-5">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    <div class="row justify-content-center">
+        <div class="col-md-6"> 
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Tambah Data Penduduk
+                </div>
+                <div class="card-body">
+
+                    <form action="" method="POST">
+                        @csrf
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                i
+                            </div>
+                            <div class="col-md-6">
+                                i 
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary me-2">Buat</button>
+                            <a class="btn btn-secondary" style="margin-left: 5px" href="">Kembali</a>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+<!-- edit -->
+
+@extends('tampilan.app') 
+
+@section('content')
+<div class="container mt-5">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    <div class="row justify-content-center">
+        <div class="col-md-6"> 
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Edit Data Penduduk
+                </div>
+                <div class="card-body">
+
+                    <form action="" method="POST">
+                        @csrf
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                i
+                            </div>
+                            <div class="col-md-6">
+                                i 
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary me-2">Perbarui</button>
+                            <a class="btn btn-secondary" style="margin-left: 5px" href="">Kembali</a>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+
+
+						<div class="col-md-4 col-sm-6">
+							<div class="single-how-works">
+								<div class="single-how-works-icon">
+									<i class="flaticon-lightbulb-idea"></i>
+								</div>
+								<h2><a href="#">choose <span> what to</span> do</a></h2>
+								<p>
+									Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
+								</p>
+								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+									read more
+								</button>
+							</div>
+						</div>
