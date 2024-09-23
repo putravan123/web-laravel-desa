@@ -1,19 +1,63 @@
+# Konsep Dari Web Yang Saya Buat
+Website yang sedang Saya buat merupakan platform untuk pembuatan surat secara online, dirancang untuk mempermudah proses administrasi dan pengelolaan dokumen
+
+# Fitur Yang Tersedia
+### Halaman Awal : 
+- beranda
+- Layanan Warga
+- register 
+- Login
+### Authentication :
+- Register
+- Login
+### Multi User :
+- Admin
+   * dapat mengakses User Managemen
+   * dapat menambahkan data warga
+   * dapat menambahkan dokumen
+   * dapat menerima permintaan warga
+- Warga
+  * datpat mengakses Beranda
+  * dapat mengakses layanan warga
+### yang dapat di akses oleh semua penguna
+- Halamn awal
+- login
+- register
+- logout
+  
+# Jika Mau Mengunakan Akun Default Untuk Pengujian 
+- jalan kan seeder berikut :
+```
+php artisan db:seed --class=Allseeder
+```
+  - Admin
+    * Nama : Admin User
+    * Email : admin@gmail.com
+    * Password : password
+  - Warga
+    * Nama : Warga
+    * Email : Warga@gmail.com
+    * Password : password
+### Sebenar nya Seeder itu Menambakan Beberapa Data Default Cuma Aku mengunkan Akun Defalutnya Saja 
+  
 # ERD
 ![Untitled (2)](https://github.com/user-attachments/assets/1236117f-3543-40ad-89f7-bd1faac3cb99)
 
 # uml
-![uml](https://github.com/user-attachments/assets/7e2fd388-e90d-443c-96d8-9c7ae6e9d09e)
+![bismilah](https://github.com/user-attachments/assets/9024752d-e443-40a6-a4e3-6c3d172f8070)
 
 # ini untuk gambar dokumen
 ![kop](https://github.com/user-attachments/assets/957190c1-9542-427f-9255-a4d772b7ba14)
 
+# Teknologi Yang Di Gunakan
+- Laravel 11
+- bootstrap 5
 # 1. Prasyarat 
 ### Pastikan perangkat Anda telah memenuhi prasyarat berikut sebelum menginstal Repository ini:
 
 - PHP: Versi 8.1 atau lebih baru.
 - Composer: Dependency Manager untuk PHP.
 - MySQL/SQLite: Untuk database.
-- Node.js & NPM: Untuk pengelolaan dependensi front-end.
 
 # 2. Langkah Instalasi  
 
