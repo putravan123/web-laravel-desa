@@ -1,4 +1,8 @@
+# ERD
 ![Untitled (2)](https://github.com/user-attachments/assets/1236117f-3543-40ad-89f7-bd1faac3cb99)
+
+# uml
+![uml](https://github.com/user-attachments/assets/7e2fd388-e90d-443c-96d8-9c7ae6e9d09e)
 
 # ini untuk gambar dokumen
 ![kop](https://github.com/user-attachments/assets/957190c1-9542-427f-9255-a4d772b7ba14)
